@@ -1,0 +1,5 @@
+package com.kiran.orderservice.service;
+
+public class OrderService {
+
+}

@@ -1,0 +1,46 @@
+package com.kiran.orderservice.dto;
+
+import com.kiran.orderservice.entity.Order;
+
+public class TransactionResponse {
+	
+	private Order order;
+	private int amount;
+	private String transactionId;
+	
+	public TransactionResponse() {
+		super();
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public TransactionResponse(Order order, int amount, String transactionId) {
+		super();
+		this.order = order;
+		this.amount = amount;
+		this.transactionId = transactionId;
+	}
+	
+}

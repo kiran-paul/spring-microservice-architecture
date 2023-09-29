@@ -1,0 +1,10 @@
+package com.kiran.orderservice.dto;
+
+import com.kiran.orderservice.entity.Order;
+
+public class TransactionRequest {
+	
+	private Order order;
+	private Payment payment;
+
+}

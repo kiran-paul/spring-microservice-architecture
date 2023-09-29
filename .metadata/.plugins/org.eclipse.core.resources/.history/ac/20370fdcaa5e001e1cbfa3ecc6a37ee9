@@ -1,0 +1,19 @@
+package com.kiran.orderservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kiran.orderservice.entity.Order;
+import com.kiran.orderservice.repository.OrderRepository;
+
+@Service
+public class OrderService {
+	
+	@Autowired
+	private OrderRepository repository;
+	
+	public Order saveOrder(Order order) {
+		return repository.save(order);
+	}
+
+}

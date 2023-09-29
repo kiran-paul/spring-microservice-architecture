@@ -1,0 +1,5 @@
+package com.kiran.paymentservice.controller;
+
+public class PaymentController {
+
+}

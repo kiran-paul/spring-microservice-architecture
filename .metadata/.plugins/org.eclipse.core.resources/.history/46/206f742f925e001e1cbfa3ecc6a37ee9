@@ -1,0 +1,5 @@
+package com.kiran.paymentservice.entity;
+
+public class Payment {
+
+}
