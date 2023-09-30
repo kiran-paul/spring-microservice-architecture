@@ -6,10 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kiran.orderservice.dto.Payment;
 import com.kiran.orderservice.dto.TransactionRequest;
 import com.kiran.orderservice.dto.TransactionResponse;
-import com.kiran.orderservice.entity.Order;
 import com.kiran.orderservice.service.OrderService;
 
 @RestController

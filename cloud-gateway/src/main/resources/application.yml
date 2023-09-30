@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: GATEWAY
+  config:
+    import: configserver:http://localhost:9196
   cloud:
     gateway:
       discovery:
@@ -11,20 +13,12 @@ spring:
           lower-case-service-id: false
       routes:
         - id: order-service #give any name
-          uri: lb://order-service #should start with lb, denoting load balancer
-          #uri: http://localhost:9191
+          uri: lb://order-service #should start with lb following service name. lb denoting load balancer.
           predicates:
           - Path=/order/**
         - id: payment-service
           uri: lb://payment-service 
-          #uri: http://localhost:9192
           predicates:
           - Path=/payment/**
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
+          
+
