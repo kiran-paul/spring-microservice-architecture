@@ -1,0 +1,25 @@
+server:
+  port: 8989
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: order-service #give any name
+          #uri: lb://ORDER-SERVICE #should start with lb, denoting load balancer
+          uri: http://localhost:9191
+          predicates:
+            - Path=/order/**
+        - id: payment-service 
+          uri: http://localhost:9192
+          predicates:
+            - Path=/payment/**
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost

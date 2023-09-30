@@ -26,7 +26,7 @@ public class OrderService {
 		payment.setOrderId(order.getId());
 		payment.setAmount(order.getPrice());
 		
-		Payment paymentResponse = restTemplate.postForObject("http://PAYMENT_SERVICE/payment/savePayment", payment, Payment.class);
+		Payment paymentResponse = restTemplate.postForObject("http://PAYMENT-SERVICE/payment/savePayment", payment, Payment.class);
 		String message = paymentResponse.getPaymentStatus().equals("success")?"payment success, order placed":"payment failed";
 		
 		repository.save(order);
